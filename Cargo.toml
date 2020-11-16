@@ -17,6 +17,7 @@ flate2 = { version = ">=1.0.0, <=1.0.14", default-features = false, optional = t
 time = { version = "0.1", optional = true }
 byteorder = "1.3"
 bzip2 = { version = "0.3", optional = true }
+zstd = { version = "0.5", optional = true }
 crc32fast = "1.0"
 thiserror = "1.0"
 
@@ -30,7 +31,7 @@ deflate = ["flate2/rust_backend"]
 deflate-miniz = ["flate2/default"]
 deflate-zlib = ["flate2/zlib"]
 unreserved = []
-default = ["bzip2", "deflate", "time"]
+default = ["zstd", "bzip2", "deflate", "time"]
 
 [[bench]]
 name = "read_entry"
